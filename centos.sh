@@ -148,9 +148,18 @@ ssh_port(){
     systemctl restart sshd.service
 }
 
+# yum
+yum_update(){
+    wget -O /etc/yum.repos.d/CentOS-Base.repo \
+    https://mirrors.aliyun.com/repo/Centos-7.repo
+
+    yum clean all
+    yum makecache
+}
+
 # rm alias trash
 rm_protect(){
-    sudo apt-get install trash-cli
+    sudo yum -y install trash-cli
     # .bashrc
     echo alias rm=trash >> ~/.bash_profile
 }
