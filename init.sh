@@ -29,6 +29,7 @@ input_20(){
     fi
 }
 
+#  add administraor user
 add_user(){
     name=`input_20 "input what ur want to add username: "`
     pass=`input_20 'input what ur want to set password: '`
@@ -54,8 +55,7 @@ add_user(){
     fi
 
     # sudoers
-    echo "$name  ALL=(ALL)    ALL" >> /etc/sudoers  
-    
+    echo "$name  ALL=(ALL)    ALL" >> /etc/sudoers      
 }
 
 # Disable selinux
@@ -148,6 +148,16 @@ ssh_port(){
     systemctl restart sshd.service
 }
 
+# rm alias trash
+rm_protect(){
+    sudo apt-get install trash-cli
+    # .bashrc
+    echo alias rm=trash >> ~/.bash_profile
+}
+
+
+
+
 # disable_selinux
 set_hostname
 add_user
@@ -156,3 +166,4 @@ install_docker
 root_random_passwd
 root_ssh_nolgin
 ssh_port
+rm_protect
