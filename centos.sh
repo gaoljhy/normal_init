@@ -134,8 +134,8 @@ root_random_passwd(){
 
 # ROOT ssh no login
 root_ssh_nolgin(){
-    if [ -s /etc/ssh/sshd_config ] && grep 'PermitRootLogin=yes' /etc/ssh/sshd_config; then
-        sed -i 's/PermitRootLogin=yes/PermitRootLogin=no/g' /etc/ssh/sshd_config
+    if [ -s /etc/ssh/sshd_config ] && grep 'PermitRootLogin yes' /etc/ssh/sshd_config; then
+        sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
     fi
     systemctl restart sshd.service
 }
