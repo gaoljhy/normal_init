@@ -175,4 +175,4 @@ install_docker
 root_random_passwd
 root_ssh_nolgin
 ssh_port
-rm_protect
+# rm_protect
