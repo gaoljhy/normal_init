@@ -19,7 +19,8 @@ echo
 [[ $EUID -ne 0 ]] && echo -e "[${red}Error${plain}] This script must be run as root!" && exit 1
 
 input_20(){
-    if read  -t 20 -p "$1" input 
+    # if read  -t 20 -p "$1" input 
+    if read  -p "$1" input 
     # if out time 20 seconds no input，then do else operate
     then
         echo $input
