@@ -145,6 +145,7 @@ ssh_port(){
     if [ -s /etc/ssh/sshd_config ] && grep 'Port 22' /etc/ssh/sshd_config; then
         sed -i "s/#Port 22/Port $port/g" /etc/ssh/sshd_config
     fi
+    systemctl restart sshd.service
 }
 
 # disable_selinux
