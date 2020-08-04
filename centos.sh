@@ -171,10 +171,10 @@ rm_protect(){
 # disable_selinux
 set_hostname
 add_user
+yum_update
 set_ssh_timeout
 install_docker
 root_random_passwd
 root_ssh_nolgin
 ssh_port
-yum_update
 # rm_protect
